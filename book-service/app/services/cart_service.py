@@ -62,10 +62,10 @@ class CartService:
                 subtotal = product.price * quantity
                 
                 cart_item = CartItem(product_id=product_id, name=product.name, 
-                                     price=product.price, quantity=quantity, subtotal=subtotal)
+                                    price=product.price, quantity=quantity, subtotal=subtotal)
                 cart_items.append(cart_item)
                 total_price += subtotal
                 total_items += quantity
         
-        return CartResponse(items=cart_items, total=round(total_price),
+        return CartResponse(items=cart_items, total=round(total_price, 2),
                                     items_count=total_items)
